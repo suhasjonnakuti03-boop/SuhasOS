@@ -2,15 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My WebOS</title>
+  <title>SuhasOS</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="desktop">
-    <div class="window" id="window1">
-      <div class="title-bar">My First App</div>
-      <div class="content">Hello from my WebOS! 👋</div>
+
+    <div class="taskbar">
+      <span class="os-name">SuhasOS</span>
+      <span id="clock"></span>
     </div>
+
+    <div class="window" id="w1" style="top:80px; left:40px">
+      <div class="title-bar">
+        <span>Welcome</span>
+        <button class="close-btn" onclick="closeWindow('w1')">X</button>
+      </div>
+      <div class="content">
+        <h2>Welcome to SuhasOS!</h2>
+        <p>Drag the windows around. Built for NASA Stardance.</p>
+      </div>
+    </div>
+
+    <div class="window" id="w2" style="top:80px; left:380px">
+      <div class="title-bar">
+        <span>Notepad</span>
+        <button class="close-btn" onclick="closeWindow('w2')">X</button>
+      </div>
+      <div class="content">
+        <textarea placeholder="Type your notes here..."></textarea>
+      </div>
+    </div>
+
+    <div class="window" id="w3" style="top:320px; left:40px">
+      <div class="title-bar">
+        <span>Calculator</span>
+        <button class="close-btn" onclick="closeWindow('w3')">X</button>
+      </div>
+      <div class="content">
+        <input id="calc-display" type="text" readonly placeholder="0">
+        <div class="calc-buttons">
+          <button onclick="calcInput('7')">7</button>
+          <button onclick="calcInput('8')">8</button>
+          <button onclick="calcInput('9')">9</button>
+          <button onclick="calcInput('/')">/</button>
+          <button onclick="calcInput('4')">4</button>
+          <button onclick="calcInput('5')">5</button>
+          <button onclick="calcInput('6')">6</button>
+          <button onclick="calcInput('*')">*</button>
+          <button onclick="calcInput('1')">1</button>
+          <button onclick="calcInput('2')">2</button>
+          <button onclick="calcInput('3')">3</button>
+          <button onclick="calcInput('-')">-</button>
+          <button onclick="calcInput('0')">0</button>
+          <button onclick="calcInput('.')">.</button>
+          <button onclick="calcEqual()">=</button>
+          <button onclick="calcClear()">C</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="window" id="w4" style="top:320px; left:380px">
+      <div class="title-bar">
+        <span>Clock</span>
+        <button class="close-btn" onclick="closeWindow('w4')">X</button>
+      </div>
+      <div class="content" style="text-align:center">
+        <div id="big-clock" style="font-size:2rem; font-weight:bold; margin:10px 0;"></div>
+        <div id="big-date" style="font-size:0.9rem; opacity:0.7;"></div>
+      </div>
+    </div>
+
   </div>
   <script src="script.js"></script>
 </body>
